@@ -151,7 +151,7 @@ for col, (label, value, mom_val) in zip(r2, kpi_items[3:]):
                "任务完成率": f'<div class="kpi-sub">已完成 {kpi["actual"]/10000:.0f}万 · 加权预测 {kpi["weighted_pipeline"]/10000:.0f}万</div>',
                "商机→出货转化率": f'<div class="kpi-sub">中标→出货 {kpi["won_to_ship_rate"]}%</div>'}.get(label, "")
         st.markdown(f'<div class="kpi-card"><div class="kpi-label">{label}</div><div class="kpi-main"><span class="kpi-value">{value}</span></div>{sub}{_mom_html(mom_val)}</div>', unsafe_allow_html=True)
-
+        st.markdown("<div style='height:12px;'></div>", unsafe_allow_html=True)
 st.markdown(f"""<div class="health-row">
     <div class="health-item"><div class="health-num">{health['active_channels']}</div><div class="health-label">活跃渠道</div></div>
     <div class="health-item"><div class="health-num">{health['leads_in_pipeline']}</div><div class="health-label">线索池</div></div>
